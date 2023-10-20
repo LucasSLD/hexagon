@@ -6,8 +6,9 @@ authors = ["LucasSLD <lucassld700@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
 pillow = "^10.1.0"
+numpy = "^1.26.1"
 
 
 [build-system]
