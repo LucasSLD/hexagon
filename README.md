@@ -1,1 +1,1 @@
-![svg output](https://github.com/LucasSLD/hexagon/blob/master/outputs/output.svg)
+![svg](https://github.com/LucasSLD/hexagon/blob/master/outputs/output.svg)
