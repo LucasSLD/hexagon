@@ -74,14 +74,7 @@ with Image.open("img/hexagon.png") as img:
 		for j in range(hex_pixels_count.shape[1]):
 			if(hex_pixels_count[i,j] > 0):
 				hex_colors[i,j] =  hex_colors[i,j]/hex_pixels_count[i,j]
-
-html_content = """<!DOCTYPE html>
-<html>
-   	<head> 
-      	<title>SVG Hexagon </title>		
-   	</head>
-	<body>\n
-"""
+				
 svg_content = f'<svg height="{height}" width="{width}">\n'
 
 for i in range(hex_pixels_count.shape[0]):
@@ -97,13 +90,6 @@ for i in range(hex_pixels_count.shape[0]):
 			svg_content += f'fill="rgb({hex_colors[i,j,0]},{hex_colors[i,j,1]},{hex_colors[i,j,2]})" />\n'
 
 svg_content += "</svg>"
-html_content += svg_content
-html_content += """\n	</body>
-</html>
-"""
 
 with open('outputs/output.svg','w') as f:
     f.write(svg_content)
-
-with open("outputs/output.html","w") as f:
-	f.write(html_content)
