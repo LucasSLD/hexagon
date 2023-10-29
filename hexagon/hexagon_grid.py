@@ -2,7 +2,7 @@ import numpy as np
 
 def flat_hex_to_pixel(q,r,size):
     x = size * 3/2 * q
-    y = size * np.sqrt(3)/2 * q  +  np.sqrt(3) * r
+    y = size * (np.sqrt(3)/2 * q  +  np.sqrt(3) * r)
     return (x,y)
 
 def pixel_to_flat_hex(x,y,size):
@@ -56,6 +56,17 @@ def map_value_from_ab_to_xy(value,a,b,x,y):
     assert value >= a and value <= b
     return (value-a)/(b-a) * (y-x) + x
 
+def corners_from_hex_coordinates(q,r,size):
+    center = flat_hex_to_pixel(q,r,size)
+    corners = []
+    for i in range(6):
+        angle = np.pi/3* i
+        corner = [
+            round(center[0] + size * np.cos(angle)), 
+            round(center[1] + size * np.sin(angle))
+        ]
+        corners.append(corner)
+    return corners
 
 
 if __name__ == "__main__":
