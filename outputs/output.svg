@@ -1,3 +1,4 @@
 <svg height="506" width="506">
-	
+	<polygon points="10 0,5 9,-5 9,-10 0,-5 -9,5 -9"
+	 fill="yellow" />
 </svg>
