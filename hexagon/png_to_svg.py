@@ -10,7 +10,7 @@ with Image.open("img/hexagon.png") as image:
 	width = image.size[0]
 	height = image.size[1]
 
-size = 50 # hexagons size
+size = 10 # hexagons size
 
 hex_coords = np.zeros(shape=(height,width,2),dtype=int)
 for x in range(width): # x is the horizontal axis in screen coordinates
