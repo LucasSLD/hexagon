@@ -1,1 +1,1 @@
-Hello
+![svg output](./outputs/output.svg)
