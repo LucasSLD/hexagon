@@ -74,8 +74,9 @@ with Image.open("img/hexagon.png") as img:
 		for j in range(hex_pixels_count.shape[1]):
 			if(hex_pixels_count[i,j] > 0):
 				hex_colors[i,j] =  hex_colors[i,j]/hex_pixels_count[i,j]
-				
-svg_content = f'<svg height="{height}" width="{width}">\n'
+
+svg_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="{height}" width="{width}">\n"""
 
 for i in range(hex_pixels_count.shape[0]):
 	for j in range(hex_pixels_count.shape[1]):
