@@ -89,11 +89,11 @@ for i in range(hex_pixels_count.shape[0]):
 		if(hex_pixels_count[i,j] > 0):
 			q, r = hex_coordinates_from_array_indexes(i,j,min_q,min_r)
 			corners = hg.corners_from_hex_coordinates(q,r,size)
-			svg_content += '<polygon points="'
+			svg_content += '	<polygon points="'
 			for n, corner in enumerate(corners):
 				svg_content += f'{corner[0]} {corner[1]}'
 				if n < len(corners) - 1: svg_content +=','
-				else: svg_content += '"\n'
+				else: svg_content += '" '
 			svg_content += f'fill="rgb({hex_colors[i,j,0]},{hex_colors[i,j,1]},{hex_colors[i,j,2]})" />\n'
 
 svg_content += "</svg>"
