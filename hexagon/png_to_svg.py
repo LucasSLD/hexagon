@@ -1,5 +1,4 @@
 from PIL import Image
-from copy import deepcopy
 import numpy as np
 import hexagon_grid as hg
 
