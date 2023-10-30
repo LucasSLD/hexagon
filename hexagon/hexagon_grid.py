@@ -1,6 +1,6 @@
 import numpy as np
 
-def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[int, int]:
+def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[float, float]:
     """
     Converts hexagonal coordinates (flat hexagon grid) to pixel coordinates
     Args:
@@ -13,7 +13,7 @@ def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[int, int]:
     """
     x = size * 3/2 * q
     y = size * (np.sqrt(3)/2 * q  +  np.sqrt(3) * r)
-    return (round(x),round(y))
+    return (x,y)
 
 def pixel_to_flat_hex(x : int, y : int, size : int) -> tuple[int, int]:
     """
