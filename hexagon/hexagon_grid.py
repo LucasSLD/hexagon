@@ -1,27 +1,85 @@
 import numpy as np
 
-def flat_hex_to_pixel(q,r,size):
+def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[int, int]:
+    """
+    Converts hexagonal coordinates (flat hexagon grid) to pixel coordinates
+    Args:
+        q (float): first hexagonal axis coordinate
+        r (float): second hexagonal axis coordinate
+        size (int): external radius of one hexagon in pixel
+
+    Returns:
+        tuple[int, int]: _description_
+    """
     x = size * 3/2 * q
     y = size * (np.sqrt(3)/2 * q  +  np.sqrt(3) * r)
-    return (x,y)
+    return (round(x),round(y))
 
-def pixel_to_flat_hex(x,y,size):
+def pixel_to_flat_hex(x : int, y : int, size : int) -> tuple[int, int]:
+    """
+    Get the coordinates (flat hexagon grid) from pixel coordinates (screen space)
+    Args:
+        x (int): pixel's horizontal coordinate
+        y (int): pixel's vetical coordinate
+        size (int): external radius of one hexagon in pixel
+
+    Returns:
+        tuple[int, int]: hexagonal coordinates (q,r)
+    """
     q = 2/3 * x/size
     r = (-1/3 * x + np.sqrt(3)/3 * y)/size
     return axial_round(q,r)
 
-def axial_round(q,r):
+def axial_round(q : float, r : float) -> tuple[int, int]:
+    """
+    Round the axial coordinates to the nearest hexagon
+    Args:
+        q (float): first axial coordinate
+        r (float): second axial coordinate
+
+    Returns:
+        tuple[int, int]: axial coordinates of the nearest hexagon
+    """
     cube = axial_to_cube(q,r)
     cube_rounded = cube_round(cube[0],cube[1],cube[2])
     return cube_to_axial(cube_rounded[0],cube_rounded[1],cube_rounded[2])
 
-def axial_to_cube(q,r):
+def axial_to_cube(q : float | int, r : float | int) -> tuple[float, float] | tuple[int, int]:
+    """
+    Converts axial coordinates to cube coordinates
+    Args:
+        q (float | int): first axial coordinate
+        r (float | int): second axial coordinate
+
+    Returns:
+        tuple[float, float] | tuple[int, int]: cube coordinates 
+    """
     return (q,r,-q-r)
 
-def cube_to_axial(q,r,s):
+def cube_to_axial(q : float | int, r : float | int, s : float | int) -> tuple[float, float] | tuple[int, int]:
+    """
+    Converts cube coordinates to axial coordinates
+    Args:
+        q (float | int): first cube coordinate
+        r (float | int): second cube coordinate
+        s (float | int): third cube coordinate
+
+    Returns:
+        tuple[float, float] | tuple[int, int]: 
+    """
     return (q,r)
 
-def cube_round(q_float,r_float,s_float):
+def cube_round(q_float : float, r_float : float, s_float : float) -> tuple[int, int, int]:
+    """
+    Rounds cube coordinates to the nearest hexagon
+    Args:
+        q_float (float): first cube coordinate
+        r_float (float): second cube coordinate
+        s_float (float): third cube coordinate
+
+    Returns:
+        tuple[int, int, int]: cube coordinates rounded to the nearest hexagon
+    """
     q = int(round(q_float,0))
     r = int(round(r_float,0))
     s = int(round(s_float,0))
@@ -38,25 +96,35 @@ def cube_round(q_float,r_float,s_float):
         s = -q-r
     return (q,r,s)
 
-def map_value_from_ab_to_xy(value,a,b,x,y):
+def map_value_from_ab_to_xy(value : float, a : float, b : float, x : float, y : float) -> float:
     """
     Maps a value from a source range [a,b] to a target range [x,y]
     Args:
-        value : The value to map
-        a : Lower bound of the source range
-        b : Higher bound of the target range
-        x : Lower bound of the target range
-        y : Higher bound of the target range
+        value (float): The value to map
+        a (float): Lower bound of the source range
+        b (float): Higher bound of the target range
+        x (float): Lower bound of the target range
+        y (float): Higher bound of the target range
 
     Returns:
-        _type_: the value of "value" mapped from [a,b] to [x,y] 
+        float: the value of "value" mapped from [a,b] to [x,y] 
     """
     assert a <= b
     assert x <= y
     assert value >= a and value <= b
     return (value-a)/(b-a) * (y-x) + x
 
-def corners_from_hex_coordinates(q,r,size):
+def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[float]:
+    """
+    Compute the pixel coordinates of the corners of the hexagon with coordinates (q,r)
+    Args:
+        q (float): first axial coordinate
+        r (float): second axial coordinate
+        size (int): external radius of one hexagon in pixel
+
+    Returns:
+        list[float]: pixel coordinates of each corner of the hexagon
+    """
     center = flat_hex_to_pixel(q,r,size)
     corners = []
     for i in range(6):
