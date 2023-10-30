@@ -9,7 +9,7 @@ def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[float, float]:
         size (int): external radius of one hexagon in pixel
 
     Returns:
-        tuple[int, int]: _description_
+        tuple[float, float]: pixel coordinates of the center of the hexagon with hex coordinates (q,r)
     """
     x = size * 3/2 * q
     y = size * (np.sqrt(3)/2 * q  +  np.sqrt(3) * r)
