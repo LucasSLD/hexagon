@@ -25,36 +25,6 @@ max_q = np.max(hex_coords[:,:,0])
 min_r = np.min(hex_coords[:,:,1])
 max_r = np.max(hex_coords[:,:,1])
 
-def array_indexes_from_hex_coordinates(q : int, r : int, min_q : int, min_r : int) -> tuple[int, int]:
-	"""
-	Map hexagon's coordinates to indexes of a 0-indexed array
-	Args:
-		q (int): first hexagonal coordinate
-		r (int): second hexagonal coordinate
-		min_q (int): min of q in the hexagonal grid
-		min_r (int): min of r in the hexagonal grid 
-
-	Returns:
-		tuple[int, int]: array coordinates (i,j)
-	"""
-	return (q-min_q,r-min_r)
-
-def hex_coordinates_from_array_indexes(i : int, j : int, min_q : int, min_r : int) -> tuple[int, int]:
-	"""
-	Map array indexes to the corresponding hexagonal coordinates with respect to the problem
-	specific hexagonal grid in use
-	Args:
-		i (int): first dimension index
-		j (int): second dimension index
-		min_q (int): min of q in the hexagonal grid
-		min_r (int): min of r in the hexagonal grid
-
-	Returns:
-		tuple[int, int]: hexagonal coordinates (q,r)
-	"""
-	return(i + min_q, j + min_r)
-
-
 q_range = max_q - min_q + 1 # nb of integers between min_q and max_q
 r_range = max_r - min_r + 1
 
@@ -66,7 +36,7 @@ with Image.open("img/hexagon.png") as img:
 	for x in range(width):
 		for y in range(height):
 			q, r = hex_coords[y,x] # for the pixel at position (x,y) we look at the coordinates of the hexagon it is on
-			i, j = array_indexes_from_hex_coordinates(q,r,min_q,min_r)
+			i, j = hg.array_indexes_from_hex_coordinates(q,r,min_q,min_r)
 			for k in range(3): hex_colors[i,j,k] += px[x,y][k]
 			hex_pixels_count[i,j] += 1
 	
@@ -81,7 +51,7 @@ svg_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 for i in range(hex_pixels_count.shape[0]):
 	for j in range(hex_pixels_count.shape[1]):
 		if(hex_pixels_count[i,j] > 0):
-			q, r = hex_coordinates_from_array_indexes(i,j,min_q,min_r)
+			q, r = hg.hex_coordinates_from_array_indexes(i,j,min_q,min_r)
 			corners = hg.corners_from_hex_coordinates(q,r,size)
 			svg_content += '	<polygon points="'
 			for n, corner in enumerate(corners):
