@@ -9,13 +9,13 @@ import sys
 # >> poetry run python img/hexagon.png output.svg 10                                                     #
 ##########################################################################################################
 if len(sys.argv) > 1: png_path = sys.argv[1]
-else :				  png_path = "img/hexagon.png"
+else : png_path = "img/hexagon.png"
 
 if len(sys.argv) > 2: output_name = sys.argv[2]
-else:				  output_name = "output.svg"
+else: output_name = "output.svg"
 
 if len(sys.argv) > 3: size = int(sys.argv[3]) # hexagons size
-else:				  size = 10 			  # default size when no arguments are given
+else: size = 10 			  # default size when no arguments are given
 
 with Image.open(png_path) as image:
 	px = image.load()
