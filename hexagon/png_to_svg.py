@@ -1,15 +1,28 @@
 from PIL import Image
 import numpy as np
 import hexagon_grid as hg
+import sys
 
-with Image.open("img/hexagon.png") as image:
+##########################################################################################################
+# Execute this file to convert the hexagon.png image to a svg file. The svg file is in the output folder.#
+# Example of execution in terminal (from the root directory of this project):							 #
+# >> poetry run python img/hexagon.png output.svg 10   													 #
+##########################################################################################################
+if len(sys.argv) > 1: png_path = sys.argv[1]
+else :				  png_path = "img/hexagon.png"
+
+if len(sys.argv) > 2: output_name = sys.argv[2]
+else:				  output_name = "output.svg"
+
+if len(sys.argv) > 3: size = int(sys.argv[3]) # hexagons size
+else:				  size = 10 			  # default size when no arguments are given
+
+with Image.open(png_path) as image:
 	px = image.load()
 	print(image.size)
 
 	width = image.size[0]
 	height = image.size[1]
-
-size = 10 # hexagons size
 
 hex_coords = np.zeros(shape=(height,width,2),dtype=int)
 for x in range(width): # x is the horizontal axis in screen coordinates
@@ -61,5 +74,5 @@ for i in range(hex_pixels_count.shape[0]):
 
 svg_content += "</svg>"
 
-with open('outputs/output.svg','w') as f:
+with open('outputs/' + output_name,'w') as f:
     f.write(svg_content)
