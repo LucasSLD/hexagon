@@ -15,7 +15,7 @@ if len(sys.argv) > 2: output_name = sys.argv[2]
 else: output_name = "output.svg"
 
 if len(sys.argv) > 3: size = int(sys.argv[3]) # hexagons size
-else: size = 10 			  # default size when no arguments are given
+else: size = 10 # default size when no arguments are given
 
 with Image.open(png_path) as image:
 	px = image.load()
