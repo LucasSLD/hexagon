@@ -114,7 +114,7 @@ def map_value_from_ab_to_xy(value : float, a : float, b : float, x : float, y : 
     assert value >= a and value <= b
     return (value-a)/(b-a) * (y-x) + x
 
-def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[float]:
+def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[int]:
     """
     Compute the pixel coordinates of the corners of the hexagon with coordinates (q,r)
     Args:
@@ -123,7 +123,7 @@ def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[float
         size (int): external radius of one hexagon in pixel
 
     Returns:
-        list[float]: pixel coordinates of each corner of the hexagon
+        list[int]: pixel coordinates of each corner of the hexagon
     """
     center = flat_hex_to_pixel(q,r,size)
     corners = []
