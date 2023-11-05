@@ -137,33 +137,37 @@ def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[int]:
     return corners
 
 def array_indexes_from_hex_coordinates(q : int, r : int, min_q : int, min_r : int) -> tuple[int, int]:
-	"""
-	Map hexagon's coordinates to indexes of a 0-indexed array
-	Args:
-		q (int): first hexagonal coordinate
-		r (int): second hexagonal coordinate
-		min_q (int): min of q in the hexagonal grid
-		min_r (int): min of r in the hexagonal grid 
+    """
+    Map hexagon's coordinates to indexes of a 0-indexed array
+    Args:
+    	q (int): first hexagonal coordinate
+    	r (int): second hexagonal coordinate
+    	min_q (int): min of q in the hexagonal grid
+    	min_r (int): min of r in the hexagonal grid 
 
-	Returns:
-		tuple[int, int]: array coordinates (i,j)
-	"""
-	return (q-min_q,r-min_r)
+    Returns:
+    	tuple[int, int]: array coordinates (i,j)
+    """
+    assert r >= min_r
+    assert q >= min_q
+    return (q-min_q,r-min_r)
 
 def hex_coordinates_from_array_indexes(i : int, j : int, min_q : int, min_r : int) -> tuple[int, int]:
-	"""
-	Map array indexes to the corresponding hexagonal coordinates with respect to the problem
-	specific hexagonal grid in use
-	Args:
-		i (int): first dimension index
-		j (int): second dimension index
-		min_q (int): min of q in the hexagonal grid
-		min_r (int): min of r in the hexagonal grid
-
-	Returns:
-		tuple[int, int]: hexagonal coordinates (q,r)
-	"""
-	return(i + min_q, j + min_r)
+    """
+    Map array indexes to the corresponding hexagonal coordinates with respect to the problem
+    specific hexagonal grid in use
+    Args:
+    	i (int): first dimension index
+    	j (int): second dimension index
+    	min_q (int): min of q in the hexagonal grid
+    	min_r (int): min of r in the hexagonal grid
+    
+    Returns:
+    	tuple[int, int]: hexagonal coordinates (q,r)
+    """
+    assert i >= 0
+    assert j >= 0
+    return(i + min_q, j + min_r)
 
 if __name__ == "__main__":
     from PIL import Image
