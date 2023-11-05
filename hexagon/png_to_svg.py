@@ -6,7 +6,7 @@ import sys
 ##########################################################################################################
 # Execute this file to convert the hexagon.png image to a svg file. The svg file is in the output folder.#
 # Example of execution in terminal (from the root directory of this project):                            #
-# >> poetry run python img/hexagon.png output.svg 10                                                     #
+# >> poetry run python hexagon/png_to_svg.py img/hexagon.png output.svg 10                               #
 ##########################################################################################################
 if len(sys.argv) > 1: png_path = sys.argv[1]
 else : png_path = "img/hexagon.png"
