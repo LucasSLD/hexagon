@@ -169,7 +169,7 @@ def hex_coordinates_from_array_indexes(i : int, j : int, min_q : int, min_r : in
     assert j >= 0
     return(i + min_q, j + min_r)
 
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
     from PIL import Image
     shape_0 = 500
     shape_1 = 500
