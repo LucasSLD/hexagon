@@ -46,10 +46,21 @@ def test_map_value_from_ab_to_xy():
     assert hg.map_value_from_ab_to_xy(-1,-3,0,1,5) == 11/3
 
 def test_corners_from_hex_coordinates():
-    pass
+    size = 10
+    assert hg.corners_from_hex_coordinates(0,0,size) == [
+        [size,0],
+        [round(size*0.5),round(size*np.sqrt(3)/2)],
+        [round(-size*0.5),round(size*np.sqrt(3)/2)],
+        [round(-size),0],
+        [round(-size*0.5),round(-size*np.sqrt(3)/2)],
+        [round(size*0.5),round(-size*np.sqrt(3)/2)]
+        ]
 
 def test_array_indexes_from_hex_coordinates():
-    pass
+    assert hg.array_indexes_from_hex_coordinates(0,2,-3,2) == (3,0)
+    assert hg.array_indexes_from_hex_coordinates(-5,1,-8,-4) == (3,5)
 
 def test_hex_coordinates_from_array_indexes():
-    pass
+    assert hg.hex_coordinates_from_array_indexes(0,0,-3,5) == (-3,5)
+    assert hg.hex_coordinates_from_array_indexes(0,0,0,7) == (0,7)
+    assert hg.hex_coordinates_from_array_indexes(3,8,2,-4) == (5,4)
