@@ -2,7 +2,8 @@
 
 ## **Hexagon PNG to SVG converter**
 This repository provides a solution to convert an image of a hexagon gird in **png** format and **converts** it to a scalable version (**.svg** file).
-### **Example :**
+### **Documentation : https://lucassld.github.io/hexagon/hexagon.html**
+### **Demo :**
 #### **Input png**
 ![png](./img/hexagon.png)
 #### **Output svg**
