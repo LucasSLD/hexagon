@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hexagon package &mdash; Hexagon 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tests package" href="tests.html" />
+    <link rel="prev" title="hexagon" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Hexagon
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">hexagon</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">hexagon package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-hexagon.hexagon_grid">hexagon.hexagon_grid module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.array_indexes_from_hex_coordinates"><code class="docutils literal notranslate"><span class="pre">array_indexes_from_hex_coordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.axial_round"><code class="docutils literal notranslate"><span class="pre">axial_round()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.axial_to_cube"><code class="docutils literal notranslate"><span class="pre">axial_to_cube()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.corners_from_hex_coordinates"><code class="docutils literal notranslate"><span class="pre">corners_from_hex_coordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.cube_round"><code class="docutils literal notranslate"><span class="pre">cube_round()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.cube_to_axial"><code class="docutils literal notranslate"><span class="pre">cube_to_axial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.flat_hex_to_pixel"><code class="docutils literal notranslate"><span class="pre">flat_hex_to_pixel()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.hex_coordinates_from_array_indexes"><code class="docutils literal notranslate"><span class="pre">hex_coordinates_from_array_indexes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.map_value_from_ab_to_xy"><code class="docutils literal notranslate"><span class="pre">map_value_from_ab_to_xy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon.hexagon_grid.pixel_to_flat_hex"><code class="docutils literal notranslate"><span class="pre">pixel_to_flat_hex()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hexagon-png-to-svg-module">hexagon.png_to_svg module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-hexagon">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Hexagon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">hexagon</a></li>
+      <li class="breadcrumb-item active">hexagon package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/hexagon.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hexagon-package">
+<h1>hexagon package<a class="headerlink" href="#hexagon-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-hexagon.hexagon_grid">
+<span id="hexagon-hexagon-grid-module"></span><h2>hexagon.hexagon_grid module<a class="headerlink" href="#module-hexagon.hexagon_grid" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.array_indexes_from_hex_coordinates">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">array_indexes_from_hex_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.array_indexes_from_hex_coordinates" title="Link to this definition"></a></dt>
+<dd><p>Map hexagon’s coordinates to indexes of a 0-indexed array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>int</em>) – first hexagonal coordinate</p></li>
+<li><p><strong>r</strong> (<em>int</em>) – second hexagonal coordinate</p></li>
+<li><p><strong>min_q</strong> (<em>int</em>) – min of q in the hexagonal grid</p></li>
+<li><p><strong>min_r</strong> (<em>int</em>) – min of r in the hexagonal grid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>array coordinates (i,j)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.axial_round">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">axial_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.axial_round" title="Link to this definition"></a></dt>
+<dd><p>Round the axial coordinates to the nearest hexagon</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>float</em>) – first axial coordinate</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – second axial coordinate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>axial coordinates of the nearest hexagon</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.axial_to_cube">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">axial_to_cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.axial_to_cube" title="Link to this definition"></a></dt>
+<dd><p>Converts axial coordinates to cube coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>float</em><em> | </em><em>int</em>) – first axial coordinate</p></li>
+<li><p><strong>r</strong> (<em>float</em><em> | </em><em>int</em>) – second axial coordinate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cube coordinates</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[float, float] | tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.corners_from_hex_coordinates">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">corners_from_hex_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.corners_from_hex_coordinates" title="Link to this definition"></a></dt>
+<dd><p>Compute the pixel coordinates of the corners of the hexagon with coordinates (q,r)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>float</em>) – first axial coordinate</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – second axial coordinate</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – external radius of one hexagon in pixel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pixel coordinates of each corner of the hexagon</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.cube_round">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">cube_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q_float</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_float</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_float</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.cube_round" title="Link to this definition"></a></dt>
+<dd><p>Rounds cube coordinates to the nearest hexagon</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_float</strong> (<em>float</em>) – first cube coordinate</p></li>
+<li><p><strong>r_float</strong> (<em>float</em>) – second cube coordinate</p></li>
+<li><p><strong>s_float</strong> (<em>float</em>) – third cube coordinate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cube coordinates rounded to the nearest hexagon</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[int, int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.cube_to_axial">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">cube_to_axial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.cube_to_axial" title="Link to this definition"></a></dt>
+<dd><p>Converts cube coordinates to axial coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>float</em><em> | </em><em>int</em>) – first cube coordinate</p></li>
+<li><p><strong>r</strong> (<em>float</em><em> | </em><em>int</em>) – second cube coordinate</p></li>
+<li><p><strong>s</strong> (<em>float</em><em> | </em><em>int</em>) – third cube coordinate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[float, float] | tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.flat_hex_to_pixel">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">flat_hex_to_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.flat_hex_to_pixel" title="Link to this definition"></a></dt>
+<dd><p>Converts hexagonal coordinates (flat hexagon grid) to pixel coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>float</em>) – first hexagonal axis coordinate</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – second hexagonal axis coordinate</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – external radius of one hexagon in pixel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pixel coordinates of the center of the hexagon with hex coordinates (q,r)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.hex_coordinates_from_array_indexes">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">hex_coordinates_from_array_indexes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.hex_coordinates_from_array_indexes" title="Link to this definition"></a></dt>
+<dd><p>Map array indexes to the corresponding hexagonal coordinates with respect to the problem
+specific hexagonal grid in use</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<em>int</em>) – first dimension index</p></li>
+<li><p><strong>j</strong> (<em>int</em>) – second dimension index</p></li>
+<li><p><strong>min_q</strong> (<em>int</em>) – min of q in the hexagonal grid</p></li>
+<li><p><strong>min_r</strong> (<em>int</em>) – min of r in the hexagonal grid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hexagonal coordinates (q,r)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.map_value_from_ab_to_xy">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">map_value_from_ab_to_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.map_value_from_ab_to_xy" title="Link to this definition"></a></dt>
+<dd><p>Maps a value from a source range [a,b] to a target range [x,y]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>float</em>) – The value to map</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – Lower bound of the source range</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – Higher bound of the target range</p></li>
+<li><p><strong>x</strong> (<em>float</em>) – Lower bound of the target range</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Higher bound of the target range</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of “value” mapped from [a,b] to [x,y]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hexagon.hexagon_grid.pixel_to_flat_hex">
+<span class="sig-prename descclassname"><span class="pre">hexagon.hexagon_grid.</span></span><span class="sig-name descname"><span class="pre">pixel_to_flat_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#hexagon.hexagon_grid.pixel_to_flat_hex" title="Link to this definition"></a></dt>
+<dd><p>Get the coordinates (flat hexagon grid) from pixel coordinates (screen space)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – pixel’s horizontal coordinate</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – pixel’s vetical coordinate</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – external radius of one hexagon in pixel</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hexagonal coordinates (q,r)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="hexagon-png-to-svg-module">
+<h2>hexagon.png_to_svg module<a class="headerlink" href="#hexagon-png-to-svg-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-hexagon">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hexagon" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="hexagon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tests.html" class="btn btn-neutral float-right" title="tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Lucas SALAND.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
