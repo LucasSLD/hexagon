@@ -3,6 +3,7 @@ import numpy as np
 def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[float, float]:
     """
     Converts hexagonal coordinates (flat hexagon grid) to pixel coordinates
+
     Args:
         q (float): first hexagonal axis coordinate
         r (float): second hexagonal axis coordinate
@@ -18,6 +19,7 @@ def flat_hex_to_pixel(q : float, r : float, size : int) -> tuple[float, float]:
 def pixel_to_flat_hex(x : int, y : int, size : int) -> tuple[int, int]:
     """
     Get the coordinates (flat hexagon grid) from pixel coordinates (screen space)
+
     Args:
         x (int): pixel's horizontal coordinate
         y (int): pixel's vetical coordinate
@@ -33,6 +35,7 @@ def pixel_to_flat_hex(x : int, y : int, size : int) -> tuple[int, int]:
 def axial_round(q : float, r : float) -> tuple[int, int]:
     """
     Round the axial coordinates to the nearest hexagon
+
     Args:
         q (float): first axial coordinate
         r (float): second axial coordinate
@@ -47,6 +50,7 @@ def axial_round(q : float, r : float) -> tuple[int, int]:
 def axial_to_cube(q : float | int, r : float | int) -> tuple[float, float] | tuple[int, int]:
     """
     Converts axial coordinates to cube coordinates
+
     Args:
         q (float | int): first axial coordinate
         r (float | int): second axial coordinate
@@ -59,6 +63,7 @@ def axial_to_cube(q : float | int, r : float | int) -> tuple[float, float] | tup
 def cube_to_axial(q : float | int, r : float | int, s : float | int) -> tuple[float, float] | tuple[int, int]:
     """
     Converts cube coordinates to axial coordinates
+
     Args:
         q (float | int): first cube coordinate
         r (float | int): second cube coordinate
@@ -72,6 +77,7 @@ def cube_to_axial(q : float | int, r : float | int, s : float | int) -> tuple[fl
 def cube_round(q_float : float, r_float : float, s_float : float) -> tuple[int, int, int]:
     """
     Rounds cube coordinates to the nearest hexagon
+
     Args:
         q_float (float): first cube coordinate
         r_float (float): second cube coordinate
@@ -99,6 +105,7 @@ def cube_round(q_float : float, r_float : float, s_float : float) -> tuple[int, 
 def map_value_from_ab_to_xy(value : float, a : float, b : float, x : float, y : float) -> float:
     """
     Maps a value from a source range [a,b] to a target range [x,y]
+
     Args:
         value (float): The value to map
         a (float): Lower bound of the source range
@@ -117,6 +124,7 @@ def map_value_from_ab_to_xy(value : float, a : float, b : float, x : float, y : 
 def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[int]:
     """
     Compute the pixel coordinates of the corners of the hexagon with coordinates (q,r)
+
     Args:
         q (float): first axial coordinate
         r (float): second axial coordinate
@@ -139,6 +147,7 @@ def corners_from_hex_coordinates(q : float, r : float, size : int) -> list[int]:
 def array_indexes_from_hex_coordinates(q : int, r : int, min_q : int, min_r : int) -> tuple[int, int]:
     """
     Map hexagon's coordinates to indexes of a 0-indexed array
+
     Args:
     	q (int): first hexagonal coordinate
     	r (int): second hexagonal coordinate
@@ -156,6 +165,7 @@ def hex_coordinates_from_array_indexes(i : int, j : int, min_q : int, min_r : in
     """
     Map array indexes to the corresponding hexagonal coordinates with respect to the problem
     specific hexagonal grid in use
+    
     Args:
     	i (int): first dimension index
     	j (int): second dimension index
