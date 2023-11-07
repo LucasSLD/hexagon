@@ -3,9 +3,9 @@
 ## **Hexagon PNG to SVG converter**
 This repository provides a solution to convert an image of a hexagon gird in **png** format and **converts** it to a scalable version (**.svg** file).
 ### **Example :**
-#### **Input**
+#### **Input png**
 ![png](./img/hexagon.png)
-#### **Output**
+#### **Output svg**
 ![svg](./outputs/output.svg)
 ## **Running this project**
 - **Install poetry** on your machine (for detailed instructions click [here](https://python-poetry.org/docs/#installing-with-the-official-installer))
